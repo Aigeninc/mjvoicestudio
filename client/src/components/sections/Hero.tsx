@@ -1,25 +1,48 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { MusicalNotes } from "@/components/ui/musical-notes";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white pt-16">
-      <div className="container mx-auto px-4">
+    <section className="min-h-screen flex items-center justify-center bg-black text-white pt-16 relative overflow-hidden">
+      {/* Musical Notes Background */}
+      <div className="musical-notes-bg">
+        {[...Array(6)].map((_, i) => (
+          <MusicalNotes
+            key={i}
+            variant={i % 2 === 0 ? "single" : "double"}
+            className="musical-notes-pattern w-24 h-24"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${i * 2}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
               Find Your Voice at MJVoice Studio
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-300 mb-8">
               Professional vocal training in Mount Juliet, Tennessee with Tiffini Lindsay
             </p>
-            <Button asChild size="lg">
-              <a href="#contact">Start Your Journey</a>
-            </Button>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              <Button size="lg" className="bg-white text-black hover:bg-gray-200" asChild>
+                <a href="#contact">Start Your Journey</a>
+              </Button>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -28,15 +51,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
-              {/* Musical note decorative elements */}
-              <svg
-                className="absolute -top-10 -right-10 w-32 h-32 text-gray-200"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-              </svg>
+            <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-800 shadow-2xl">
+              <MusicalNotes 
+                variant="group" 
+                className="absolute -top-10 -right-10 w-32 h-32 text-gray-800" 
+              />
             </div>
           </motion.div>
         </div>

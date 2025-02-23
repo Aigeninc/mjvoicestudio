@@ -7,7 +7,44 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+.section-alt {
+  @apply bg-black text-white;
+}
+
+.section-alt h2 {
+  @apply text-white;
+}
+
+.section-alt p {
+  @apply text-gray-300;
+}
+
+.musical-notes-bg {
+  @apply absolute w-full h-full opacity-5 pointer-events-none overflow-hidden;
+}
+
+.musical-notes-pattern {
+  @apply absolute transform rotate-12;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(12deg);
+  }
+  100% {
+    transform: translateY(0) rotate(12deg);
   }
 }
