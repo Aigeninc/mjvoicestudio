@@ -12,6 +12,11 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { format } from "date-fns";
 
+type TimeSlot = {
+  startTime: string;
+  endTime: string;
+};
+
 const services = [
   { id: "private", name: "Private Lessons" },
   { id: "online", name: "Online Classes" },
@@ -22,8 +27,8 @@ const services = [
 export function Booking() {
   const { toast } = useToast();
   const [selectedDate, setSelectedDate] = useState<string>("");
-  
-  const { data: availableSlots, isLoading: slotsLoading } = useQuery({
+
+  const { data: availableSlots = [], isLoading: slotsLoading, error: slotsError } = useQuery<TimeSlot[]>({
     queryKey: ["/api/booking/available-slots"],
   });
 
@@ -152,13 +157,17 @@ export function Booking() {
                 }}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select Time Slot" />
+                  <SelectValue placeholder={slotsLoading ? "Loading..." : "Select Time Slot"} />
                 </SelectTrigger>
                 <SelectContent>
                   {slotsLoading ? (
-                    <SelectItem value="loading">Loading available slots...</SelectItem>
+                    <SelectItem value="loading" disabled>Loading available slots...</SelectItem>
+                  ) : slotsError ? (
+                    <SelectItem value="error" disabled>Error loading slots. Please try again.</SelectItem>
+                  ) : availableSlots.length === 0 ? (
+                    <SelectItem value="none" disabled>No available slots</SelectItem>
                   ) : (
-                    availableSlots?.map((slot: any, index: number) => (
+                    availableSlots.map((slot, index) => (
                       <SelectItem 
                         key={index} 
                         value={`${slot.startTime}|${slot.endTime}`}

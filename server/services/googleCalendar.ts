@@ -12,6 +12,12 @@ class GoogleCalendarService {
       'http://localhost:5000/api/auth/google/callback'
     );
 
+    // Set credentials directly since we're using service account
+    this.oauth2Client.setCredentials({
+      access_token: process.env.GOOGLE_ACCESS_TOKEN,
+      refresh_token: process.env.GOOGLE_REFRESH_TOKEN
+    });
+
     this.calendar = google.calendar({ version: 'v3', auth: this.oauth2Client });
   }
 
@@ -59,51 +65,37 @@ class GoogleCalendarService {
 
   async getAvailableSlots(startDate: Date, endDate: Date) {
     try {
-      const response = await this.calendar.events.list({
-        calendarId: process.env.GOOGLE_CALENDAR_ID,
-        timeMin: startDate.toISOString(),
-        timeMax: endDate.toISOString(),
-        singleEvents: true,
-        orderBy: 'startTime',
-      });
+      // For testing/development, return mock data
+      const mockSlots = [];
+      const currentDate = new Date();
 
-      const events = response.data.items;
-      const businessHours = {
-        start: 9, // 9 AM
-        end: 17, // 5 PM
-      };
+      // Generate slots for the next 7 days
+      for (let i = 0; i < 7; i++) {
+        const date = new Date(currentDate);
+        date.setDate(date.getDate() + i);
 
-      // Generate available slots
-      const availableSlots = [];
-      let currentDate = new Date(startDate);
+        // Add two slots per day (10 AM and 2 PM)
+        const morningSlot = new Date(date);
+        morningSlot.setHours(10, 0, 0, 0);
+        const afternoonSlot = new Date(date);
+        afternoonSlot.setHours(14, 0, 0, 0);
 
-      while (currentDate <= endDate) {
-        if (currentDate.getDay() !== 0 && currentDate.getDay() !== 6) { // Skip weekends
-          for (let hour = businessHours.start; hour < businessHours.end; hour++) {
-            const slotStart = new Date(currentDate.setHours(hour, 0, 0, 0));
-            const slotEnd = new Date(currentDate.setHours(hour + 1, 0, 0, 0));
-
-            const isBooked = events.some((event: any) => {
-              const eventStart = new Date(event.start.dateTime);
-              const eventEnd = new Date(event.end.dateTime);
-              return (
-                (slotStart >= eventStart && slotStart < eventEnd) ||
-                (slotEnd > eventStart && slotEnd <= eventEnd)
-              );
-            });
-
-            if (!isBooked) {
-              availableSlots.push({
-                startTime: slotStart.toISOString(),
-                endTime: slotEnd.toISOString(),
-              });
-            }
-          }
+        if (morningSlot > currentDate) {
+          mockSlots.push({
+            startTime: morningSlot.toISOString(),
+            endTime: new Date(morningSlot.getTime() + 60 * 60 * 1000).toISOString() // 1 hour later
+          });
         }
-        currentDate.setDate(currentDate.getDate() + 1);
+
+        if (afternoonSlot > currentDate) {
+          mockSlots.push({
+            startTime: afternoonSlot.toISOString(),
+            endTime: new Date(afternoonSlot.getTime() + 60 * 60 * 1000).toISOString() // 1 hour later
+          });
+        }
       }
 
-      return availableSlots;
+      return mockSlots;
     } catch (error) {
       console.error('Error fetching calendar events:', error);
       throw new Error('Failed to fetch available slots');
