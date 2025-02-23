@@ -38,37 +38,37 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="relative z-10"
           >
-            <motion.span 
-              className="text-xl mb-4 inline-block text-primary-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Welcome to
-            </motion.span>
-            <motion.h1
-              className="hero-title mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
-                MJVoice Studio
-              </span>
-            </motion.h1>
-
-            {/* Animated Quote */}
+            {/* Unified Frosted Glass Container */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-              className="mb-8 glam-border p-6 backdrop-blur-sm bg-white/5"
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="glam-border p-8 backdrop-blur-sm bg-white/5 mb-8"
             >
-              <motion.blockquote 
-                className="text-xl italic text-gray-300"
+              <motion.span 
+                className="text-xl mb-4 inline-block text-primary-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 0.4 }}
+              >
+                Welcome to
+              </motion.span>
+              <motion.h1
+                className="hero-title mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
+                  MJVoice Studio
+                </span>
+              </motion.h1>
+
+              <motion.blockquote 
+                className="text-xl italic text-gray-300 border-l-2 border-white/20 pl-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
               >
                 "{quote.text}"
                 <footer className="mt-2 text-sm text-gray-400">
@@ -81,7 +81,7 @@ export function Hero() {
               className="text-xl text-gray-300 mb-8 max-w-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4 }}
+              transition={{ delay: 1.2 }}
             >
               Professional vocal training in Mount Juliet, Tennessee with Tiffini Lindsay.
               Transform your voice and unlock your true potential.
@@ -89,7 +89,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.6 }}
+              transition={{ delay: 1.4 }}
               className="space-x-4"
             >
               <Button 
