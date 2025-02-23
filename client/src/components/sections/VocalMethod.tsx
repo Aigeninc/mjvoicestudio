@@ -37,7 +37,7 @@ const methodPoints = [
 
 export function VocalMethod() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 gradient-animate">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,8 +46,8 @@ export function VocalMethod() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Our Vocal Method</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="section-title shimmer-text">Our Vocal Method</h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             A comprehensive approach to vocal training that nurtures your unique voice
           </p>
         </motion.div>
@@ -61,15 +61,19 @@ export function VocalMethod() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full glam-card">
+              <Card className="h-full glam-card glass-container">
                 <CardContent className="p-8 text-center">
-                  <div className="mb-6 flex justify-center">
-                    <div className="p-3 rounded-full bg-black/5">
+                  <motion.div 
+                    className="mb-6 flex justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
                       {point.icon}
                     </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4">{point.title}</h3>
-                  <p className="text-gray-600">{point.description}</p>
+                  </motion.div>
+                  <h3 className="text-xl font-semibold mb-4 text-white">{point.title}</h3>
+                  <p className="text-gray-300">{point.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
