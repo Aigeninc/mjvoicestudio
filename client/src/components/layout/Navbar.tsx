@@ -4,12 +4,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "What You'll Learn", href: "/#learn" },
-  { name: "Who It's For", href: "/#who" },
-  { name: "Services", href: "/#services" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/#contact" }
+  { name: "Home", href: "#" },
+  { name: "What You'll Learn", href: "#learn" },
+  { name: "Who It's For", href: "#who" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" }
 ];
 
 export function Navbar() {
