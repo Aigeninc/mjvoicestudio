@@ -6,12 +6,11 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">MJVoice Studio</h3>
+            <h3 className="text-xl font-bold mb-4">Greatest Star Studio</h3>
             <p className="text-gray-400">
               Professional vocal training in Mount Juliet, Tennessee
             </p>
           </div>
-          
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <p className="text-gray-400">
@@ -19,7 +18,6 @@ export function Footer() {
               Mount Juliet, TN
             </p>
           </div>
-
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
@@ -35,9 +33,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} MJVoice Studio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Greatest Star Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>

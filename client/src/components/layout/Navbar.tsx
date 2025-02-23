@@ -19,7 +19,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="text-3xl font-bold font-serif text-white">
-            MJ<span className="text-primary">Voice</span>
+            Greatest<span className="text-primary">Star</span>
           </a>
         </div>
 

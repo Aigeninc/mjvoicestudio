@@ -66,7 +66,7 @@ export function Hero() {
                 transition={{ delay: 0.6 }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
-                  MJVoice Studio
+                  Greatest Star Studio
                 </span>
               </motion.h1>
 
