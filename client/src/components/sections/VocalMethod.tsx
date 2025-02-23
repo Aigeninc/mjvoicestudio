@@ -61,7 +61,7 @@ export function VocalMethod() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full bg-black/40 border border-white/10">
+              <Card className="h-full glam-card">
                 <CardContent className="p-8 text-center">
                   <motion.div 
                     className="mb-6 flex justify-center"
