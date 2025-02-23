@@ -10,8 +10,14 @@ const quote = {
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-black text-white pt-16 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/IMG_8302_1740350116075.jpeg")' }}
+      />
+
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70"></div>
 
       {/* Musical Notes Background */}
       <div className="musical-notes-bg">
@@ -114,11 +120,11 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative z-10"
+            className="relative z-10 hidden lg:block"
           >
             <div className="glam-card aspect-video p-1">
               <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
-              <div className="relative h-full bg-gray-900 rounded-lg overflow-hidden">
+              <div className="relative h-full bg-gray-900/30 rounded-lg overflow-hidden backdrop-blur-sm">
                 <MusicalNotes 
                   variant="group" 
                   className="absolute -top-10 -right-10 w-32 h-32 text-gray-800" 
