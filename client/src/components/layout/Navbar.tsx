@@ -18,9 +18,9 @@ export function Navbar() {
     <nav className="fixed w-full bg-black/80 backdrop-blur-sm z-50 border-b border-white/10">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="flex items-center gap-2 text-3xl font-bold font-serif text-white">
+          <a href="/" className="flex items-center gap-2">
             <img src="/generated-icon.png" alt="Greatest Star Studio" className="h-8 w-auto" />
-            <span className="text-primary">Star</span>
+            <span className="text-3xl font-bold font-serif text-primary">Star</span>
           </a>
         </div>
 
