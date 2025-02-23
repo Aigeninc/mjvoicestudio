@@ -61,15 +61,17 @@ export function VocalMethod() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full glam-card glass-container">
+              <Card className="h-full bg-black/40 border border-white/10">
                 <CardContent className="p-8 text-center">
                   <motion.div 
                     className="mb-6 flex justify-center"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-                      {point.icon}
+                    <div className="p-4 rounded-full bg-white/10 border border-white/20">
+                      <motion.div className="text-white">
+                        {point.icon}
+                      </motion.div>
                     </div>
                   </motion.div>
                   <h3 className="text-xl font-semibold mb-4 text-white">{point.title}</h3>
