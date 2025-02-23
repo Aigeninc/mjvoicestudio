@@ -61,7 +61,7 @@ export function Services() {
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <p className="text-lg font-semibold mb-4">{service.price}</p>
                   <Button className="w-full" asChild>
-                    <a href="#booking">Book Now</a>
+                    <a href="#contact">Book Now</a>
                   </Button>
                 </CardContent>
               </Card>

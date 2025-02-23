@@ -5,7 +5,6 @@ import { WhoIsItFor } from "@/components/sections/WhoIsItFor";
 import { VocalMethod } from "@/components/sections/VocalMethod";
 import { VocalAdvantage } from "@/components/sections/VocalAdvantage";
 import { Services } from "@/components/sections/Services";
-import { Booking } from "@/components/sections/Booking";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Press } from "@/components/sections/Press";
 import { Contact } from "@/components/sections/Contact";
@@ -22,7 +21,6 @@ export default function Home() {
         <VocalMethod />
         <VocalAdvantage />
         <Services />
-        <Booking />
         <Testimonials />
         <Press />
         <Contact />
