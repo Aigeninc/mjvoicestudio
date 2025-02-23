@@ -13,9 +13,10 @@ export function Hero() {
             variant={i % 2 === 0 ? "single" : "double"}
             className="musical-notes-pattern w-24 h-24"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              top: `${Math.floor(i / 2) * 33}%`,
+              left: `${(i % 3) * 33}%`,
               animationDelay: `${i * 2}s`,
+              zIndex: i,
             }}
           />
         ))}

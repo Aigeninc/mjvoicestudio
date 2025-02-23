@@ -50,9 +50,10 @@ export function WhatYouLearn() {
             variant={i % 2 === 0 ? "single" : "double"}
             className="musical-notes-pattern w-24 h-24"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              top: `${Math.floor(i / 2) * 50}%`,
+              left: `${(i % 2) * 50}%`,
               animationDelay: `${i * 3}s`,
+              zIndex: i,
             }}
           />
         ))}
