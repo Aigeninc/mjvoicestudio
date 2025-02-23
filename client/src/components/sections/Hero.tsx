@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MusicalNotes } from "@/components/ui/musical-notes";
 
+const quote = {
+  text: "Every voice has a story. Let's make yours extraordinary.",
+  author: "Tiffini Lindsay"
+};
+
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-black text-white pt-16 relative overflow-hidden">
@@ -51,11 +56,32 @@ export function Hero() {
                 MJVoice Studio
               </span>
             </motion.h1>
+
+            {/* Animated Quote */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+              className="mb-8 glam-border p-6 backdrop-blur-sm bg-white/5"
+            >
+              <motion.blockquote 
+                className="text-xl italic text-gray-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2 }}
+              >
+                "{quote.text}"
+                <footer className="mt-2 text-sm text-gray-400">
+                  — {quote.author}
+                </footer>
+              </motion.blockquote>
+            </motion.div>
+
             <motion.p
               className="text-xl text-gray-300 mb-8 max-w-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 1.4 }}
             >
               Professional vocal training in Mount Juliet, Tennessee with Tiffini Lindsay.
               Transform your voice and unlock your true potential.
@@ -63,7 +89,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 1.6 }}
               className="space-x-4"
             >
               <Button 
