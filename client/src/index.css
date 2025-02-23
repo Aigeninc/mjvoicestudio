@@ -1,3 +1,8 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/600.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +18,11 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 }
 
@@ -37,6 +47,24 @@
   animation: float 15s ease-in-out infinite;
 }
 
+.gradient-overlay {
+  @apply absolute inset-0 bg-gradient-to-r from-black/80 to-black/40;
+}
+
+.glam-border {
+  @apply border border-gray-200/20 backdrop-blur-sm;
+}
+
+.hero-title {
+  @apply text-6xl md:text-7xl lg:text-8xl font-bold;
+  line-height: 1.1;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-6;
+  line-height: 1.2;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0) rotate(12deg);
@@ -47,4 +75,19 @@
   100% {
     transform: translateY(0) rotate(12deg);
   }
+}
+
+/* Glamorous card effect */
+.glam-card {
+  @apply relative overflow-hidden rounded-lg;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.glam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.2);
 }

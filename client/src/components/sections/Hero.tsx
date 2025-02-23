@@ -5,6 +5,9 @@ import { MusicalNotes } from "@/components/ui/musical-notes";
 export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-black text-white pt-16 relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
+
       {/* Musical Notes Background */}
       <div className="musical-notes-bg">
         {[...Array(6)].map((_, i) => (
@@ -28,20 +31,55 @@ export function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative z-10"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-              Find Your Voice at MJVoice Studio
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Professional vocal training in Mount Juliet, Tennessee with Tiffini Lindsay
-            </p>
+            <motion.span 
+              className="text-xl mb-4 inline-block text-primary-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              Welcome to
+            </motion.span>
+            <motion.h1
+              className="hero-title mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-300 to-white">
+                MJVoice Studio
+              </span>
+            </motion.h1>
+            <motion.p
+              className="text-xl text-gray-300 mb-8 max-w-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              Professional vocal training in Mount Juliet, Tennessee with Tiffini Lindsay.
+              Transform your voice and unlock your true potential.
+            </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ delay: 0.8 }}
+              className="space-x-4"
             >
-              <Button size="lg" className="bg-white text-black hover:bg-gray-200" asChild>
+              <Button 
+                size="lg" 
+                className="bg-white text-black hover:bg-gray-200" 
+                asChild
+              >
                 <a href="#contact">Start Your Journey</a>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/10" 
+                asChild
+              >
+                <a href="#services">Explore Services</a>
               </Button>
             </motion.div>
           </motion.div>
@@ -50,13 +88,16 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative z-10"
           >
-            <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-800 shadow-2xl">
-              <MusicalNotes 
-                variant="group" 
-                className="absolute -top-10 -right-10 w-32 h-32 text-gray-800" 
-              />
+            <div className="glam-card aspect-video p-1">
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
+              <div className="relative h-full bg-gray-900 rounded-lg overflow-hidden">
+                <MusicalNotes 
+                  variant="group" 
+                  className="absolute -top-10 -right-10 w-32 h-32 text-gray-800" 
+                />
+              </div>
             </div>
           </motion.div>
         </div>
