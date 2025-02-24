@@ -89,7 +89,7 @@ export function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white/10 w-full sm:w-auto" 
+              className="border-white text-black hover:bg-white hover:text-black w-full sm:w-auto" 
               asChild
             >
               <a href="#services">Explore Services</a>
