@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { MusicalNotes } from "@/components/ui/musical-notes";
 
 const learningPoints = [
   {
@@ -43,22 +42,6 @@ const learningPoints = [
 export function WhatYouLearn() {
   return (
     <section id="learn" className="py-20 section-alt relative overflow-hidden">
-      <div className="musical-notes-bg">
-        {[...Array(4)].map((_, i) => (
-          <MusicalNotes
-            key={i}
-            variant={i % 2 === 0 ? "single" : "double"}
-            className="musical-notes-pattern w-24 h-24"
-            style={{
-              top: `${Math.floor(i / 2) * 50}%`,
-              left: `${(i % 2) * 50}%`,
-              animationDelay: `${i * 3}s`,
-              zIndex: i,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +51,7 @@ export function WhatYouLearn() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">
-            What Will You Learn at MJVoice
+            What Will You Learn at Greatest Star Studio
           </h2>
         </motion.div>
 

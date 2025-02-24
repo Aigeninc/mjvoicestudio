@@ -36,7 +36,7 @@ export function VocalAdvantage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">The MJVoice Advantage</h2>
+          <h2 className="section-title">Greatest Star Studio Advantage</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             What sets our vocal training apart from the rest
           </p>

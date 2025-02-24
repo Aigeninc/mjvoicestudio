@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MusicalNotes } from "@/components/ui/musical-notes";
 
 const quote = {
   text: "Every voice has a story. Let's make yours extraordinary.",
@@ -18,23 +17,6 @@ export function Hero() {
 
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70"></div>
-
-      {/* Musical Notes Background */}
-      <div className="musical-notes-bg">
-        {[...Array(6)].map((_, i) => (
-          <MusicalNotes
-            key={i}
-            variant={i % 2 === 0 ? "single" : "double"}
-            className="musical-notes-pattern w-24 h-24"
-            style={{
-              top: `${Math.floor(i / 2) * 33}%`,
-              left: `${(i % 3) * 33}%`,
-              animationDelay: `${i * 2}s`,
-              zIndex: i,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -108,7 +90,7 @@ export function Hero() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/10" 
+                className="border-white text-black hover:bg-gray-200" 
                 asChild
               >
                 <a href="#services">Explore Services</a>
@@ -124,12 +106,6 @@ export function Hero() {
           >
             <div className="glam-card aspect-video p-1">
               <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
-              <div className="relative h-full bg-gray-900/30 rounded-lg overflow-hidden backdrop-blur-sm">
-                <MusicalNotes 
-                  variant="group" 
-                  className="absolute -top-10 -right-10 w-32 h-32 text-gray-800" 
-                />
-              </div>
             </div>
           </motion.div>
         </div>

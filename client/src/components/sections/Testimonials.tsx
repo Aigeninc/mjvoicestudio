@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     name: "Jessica L.",
-    text: "The personalized attention and professional environment at MJVoice Studio is unmatched.",
+    text: "The personalized attention and professional environment at Greatest Star Studio is unmatched.",
     image: "/testimonials/jessica.jpg",
     role: "Broadway Performer"
   }

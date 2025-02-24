@@ -6,12 +6,12 @@ const services = [
   {
     title: "Private Singing Lessons",
     description: "One-on-one instruction tailored to your goals",
-    price: "Starting at $60/hour"
+    price: "Starting at $35 / 30 minutes"
   },
   {
     title: "Online Singing Classes",
     description: "Learn from anywhere with virtual lessons",
-    price: "Starting at $50/hour"
+    price: "Starting at $35 / 30 minutes"
   },
   {
     title: "Group Classes",
@@ -19,9 +19,9 @@ const services = [
     price: "Starting at $40/person"
   },
   {
-    title: "Artist Development",
-    description: "Comprehensive program for aspiring professionals",
-    price: "Custom packages available"
+    title: "Karoake Training",
+    description: "Let's have some fun",
+    price: "$35 / 30 minutes"
   }
 ];
 

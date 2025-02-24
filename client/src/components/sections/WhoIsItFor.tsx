@@ -37,7 +37,7 @@ export function WhoIsItFor() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">
-            Who is MJVoice For?
+            Who is Greatest Star Studio For?
           </h2>
           <p className="text-xl text-gray-600">
             Our programs are designed for everyone who wants to improve their voice
