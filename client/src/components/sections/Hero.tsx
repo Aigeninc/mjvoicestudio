@@ -23,17 +23,17 @@ export function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-2xl"
+          className="relative z-10 max-w-4xl mx-auto"
         >
           {/* Unified Frosted Glass Container */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="glam-border p-8 backdrop-blur-sm bg-white/5 mb-8"
+            className="glam-border p-6 sm:p-8 md:p-12 backdrop-blur-sm bg-white/5 mb-8"
           >
             <motion.span 
-              className="text-xl mb-4 inline-block text-primary-foreground"
+              className="text-lg sm:text-xl mb-2 sm:mb-4 inline-block text-primary-foreground"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -41,7 +41,7 @@ export function Hero() {
               Welcome to
             </motion.span>
             <motion.h1
-              className="hero-title mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -52,20 +52,20 @@ export function Hero() {
             </motion.h1>
 
             <motion.blockquote 
-              className="text-xl italic text-gray-300 border-l-2 border-white/20 pl-4"
+              className="text-lg sm:text-xl italic text-gray-300 border-l-2 border-white/20 pl-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
               "{quote.text}"
-              <footer className="mt-2 text-sm text-gray-400">
+              <footer className="mt-2 text-sm sm:text-base text-gray-400">
                 — {quote.author}
               </footer>
             </motion.blockquote>
           </motion.div>
 
           <motion.p
-            className="text-xl text-gray-300 mb-8 max-w-lg"
+            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
@@ -77,11 +77,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
-            className="space-x-4"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:space-x-4"
           >
             <Button 
               size="lg" 
-              className="bg-white text-black hover:bg-gray-200" 
+              className="bg-white text-black hover:bg-gray-200 w-full sm:w-auto" 
               asChild
             >
               <a href="#contact">Start Your Journey</a>
@@ -89,7 +89,7 @@ export function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white/10" 
+              className="border-white text-white hover:bg-white/10 w-full sm:w-auto" 
               asChild
             >
               <a href="#services">Explore Services</a>
