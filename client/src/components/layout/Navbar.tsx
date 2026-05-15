@@ -21,9 +21,10 @@ export function Navbar() {
     <nav className="fixed w-full bg-black/80 backdrop-blur-sm z-50 border-b border-white/10">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
-          <a href={asset("/")} className="flex items-center gap-2">
-            <img src={asset("/generated-icon.png")} alt="Greatest Star Studio" className="h-8 w-auto" />
-            <span className="text-3xl font-bold font-serif text-primary">Star</span>
+          <a href={asset("/")} className="flex items-center">
+            <span className="text-2xl font-bold font-serif text-white tracking-wide">
+              MJ Voice Studio
+            </span>
           </a>
         </div>
 

@@ -51,7 +51,7 @@ export function WhatYouLearn() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4">
-            What Will You Learn at Greatest Star Studio
+            What You'll Learn at MJ Voice Studio
           </h2>
         </motion.div>
 

@@ -30,7 +30,7 @@ export function Studio() {
           <div className="relative rounded-lg overflow-hidden shadow-2xl">
             <img
               src={asset("/studio-house.jpg")}
-              alt="The Greatest Star Studio — top floor of the Mount Juliet, TN home"
+              alt="MJ Voice Studio — top floor of the Mount Juliet, TN home"
               className="w-full object-cover"
             />
             {/* Floor marker overlay */}

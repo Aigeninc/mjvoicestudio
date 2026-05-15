@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Greatest Star Studio</h3>
+            <h3 className="text-xl font-bold mb-4">MJ Voice Studio</h3>
             <p className="text-gray-400">
               Professional vocal training in Mount Juliet, Tennessee
             </p>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Greatest Star Studio. All rights
+            &copy; {new Date().getFullYear()} MJ Voice Studio. All rights
             reserved.
           </p>
         </div>
