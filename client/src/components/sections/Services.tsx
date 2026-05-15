@@ -19,7 +19,7 @@ const services = [
     price: "Starting at $40/person"
   },
   {
-    title: "Karoake Training",
+    title: "Karaoke Training",
     description: "Let's have some fun",
     price: "$35 / 30 minutes"
   }

@@ -2,13 +2,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 const navItems = [
   { name: "Home", href: "#" },
-  { name: "What You'll Learn", href: "#learn" },
-  { name: "Who It's For", href: "#who" },
-  { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" }
+  { name: "Meet Tiffini", href: "#about" },
+  { name: "Listen", href: "#listen" },
+  { name: "Lessons", href: "#lessons" },
+  { name: "Studio", href: "#studio" },
+  { name: "FAQ", href: "#faq" },
+  { name: "Book", href: "#contact" }
 ];
 
 export function Navbar() {
@@ -18,8 +21,8 @@ export function Navbar() {
     <nav className="fixed w-full bg-black/80 backdrop-blur-sm z-50 border-b border-white/10">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="flex items-center gap-2">
-            <img src="/generated-icon.png" alt="Greatest Star Studio" className="h-8 w-auto" />
+          <a href={asset("/")} className="flex items-center gap-2">
+            <img src={asset("/generated-icon.png")} alt="Greatest Star Studio" className="h-8 w-auto" />
             <span className="text-3xl font-bold font-serif text-primary">Star</span>
           </a>
         </div>

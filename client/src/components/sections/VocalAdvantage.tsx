@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trophy, Award, Star, Users } from "lucide-react";
+import { Sparkles, Laptop2, MapPin, Users } from "lucide-react";
 
 const advantages = [
   {
-    icon: <Trophy className="h-8 w-8" />,
-    title: "20+ Years Experience",
-    description: "Decades of expertise in vocal training and performance development"
-  },
-  {
-    icon: <Award className="h-8 w-8" />,
-    title: "Industry Recognition",
-    description: "Award-winning vocal coaching methodology"
-  },
-  {
-    icon: <Star className="h-8 w-8" />,
-    title: "Success Stories",
-    description: "Proven track record of transforming voices and launching careers"
+    icon: <Sparkles className="h-8 w-8" />,
+    title: "Personalized Programs",
+    description: "Every student gets a plan built around their voice, their goals, and how they learn best."
   },
   {
     icon: <Users className="h-8 w-8" />,
-    title: "Diverse Client Base",
-    description: "From beginners to professional performers"
+    title: "All Ages & Levels",
+    description: "Beginners and experienced singers, kids through adults — everyone starts where they are."
+  },
+  {
+    icon: <Laptop2 className="h-8 w-8" />,
+    title: "In-Person & Online",
+    description: "Train at the Mount Juliet studio or over Zoom from anywhere — same curriculum, same price."
+  },
+  {
+    icon: <MapPin className="h-8 w-8" />,
+    title: "Rooted in Middle Tennessee",
+    description: "A local studio focused on building real progress, one lesson at a time."
   }
 ];
 
@@ -36,9 +36,9 @@ export function VocalAdvantage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Greatest Star Studio Advantage</h2>
+          <h2 className="section-title">The Greatest Star Studio Difference</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            What sets our vocal training apart from the rest
+            What you can expect from training with us
           </p>
         </motion.div>
 

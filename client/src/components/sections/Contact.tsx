@@ -1,48 +1,48 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
 import { insertContactSchema } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+
+const CONTACT_EMAIL = "tiff@mjvoice.com";
 
 export function Contact() {
   const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
   const form = useForm({
     resolver: zodResolver(insertContactSchema),
     defaultValues: {
       name: "",
       email: "",
       subject: "",
-      message: ""
-    }
-  });
-
-  const mutation = useMutation({
-    mutationFn: async (data: any) => {
-      await apiRequest("POST", "/api/contact", data);
+      message: "",
     },
-    onSuccess: () => {
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you soon."
-      });
-      form.reset();
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive"
-      });
-    }
   });
 
   const onSubmit = form.handleSubmit((data) => {
-    mutation.mutate(data);
+    setSubmitting(true);
+    // Compose a mailto: with the form contents so the request actually reaches Tiffini
+    const subject = encodeURIComponent(
+      data.subject || `Free trial lesson request — ${data.name}`,
+    );
+    const body = encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`,
+    );
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    window.location.href = mailto;
+
+    setTimeout(() => {
+      toast({
+        title: "Your email is opening",
+        description: `If nothing happens, email ${CONTACT_EMAIL} directly — Tiffini will reply within 24 hours.`,
+      });
+      form.reset();
+      setSubmitting(false);
+    }, 400);
   });
 
   return (
@@ -55,11 +55,12 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4">
-            We're Here For You
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Book a Free Trial Lesson
           </h2>
-          <p className="text-xl text-gray-600">
-            Get in touch with us today
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Send Tiffini a quick note and she'll reply within 24 hours to
+            schedule your free trial lesson.
           </p>
         </motion.div>
 
@@ -118,11 +119,22 @@ export function Contact() {
 
             <Button
               type="submit"
-              className="w-full"
-              disabled={mutation.isPending}
+              size="lg"
+              className="w-full bg-black hover:bg-gray-800 text-white text-base font-semibold py-6"
+              disabled={submitting}
             >
-              {mutation.isPending ? "Sending..." : "Send Message"}
+              {submitting ? "Opening your email…" : "Request My Free Trial Lesson"}
             </Button>
+            <p className="text-center text-sm text-gray-500">
+              Or email{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-black underline hover:no-underline"
+              >
+                {CONTACT_EMAIL}
+              </a>{" "}
+              directly
+            </p>
           </form>
         </div>
       </div>

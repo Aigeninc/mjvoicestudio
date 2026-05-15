@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { asset } from "@/lib/asset";
 
 const quote = {
   text: "Every voice has a story. Let's make yours extraordinary.",
@@ -10,9 +11,9 @@ export function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-black text-white pt-16 relative overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/IMG_8302_1740350116075.jpeg")' }}
+        style={{ backgroundImage: `url("${asset("/IMG_8302_1740350116075.jpeg")}")` }}
       />
 
       {/* Background Gradient */}
@@ -77,22 +78,22 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:space-x-4"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4"
           >
-            <Button 
-              size="lg" 
-              className="bg-white text-black hover:bg-gray-200 w-full sm:w-auto" 
+            <Button
+              size="lg"
+              className="bg-white text-black hover:bg-gray-200 font-semibold text-base px-8 py-6 w-full sm:w-auto shadow-xl"
               asChild
             >
-              <a href="#contact">Start Your Journey</a>
+              <a href="#contact">Book a Free Trial Lesson</a>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-black hover:bg-white hover:text-black w-full sm:w-auto" 
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-black font-medium text-base px-8 py-6 w-full sm:w-auto"
               asChild
             >
-              <a href="#services">Explore Services</a>
+              <a href="#listen">Hear Tiffini Sing</a>
             </Button>
           </motion.div>
         </motion.div>

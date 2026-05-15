@@ -1,14 +1,17 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { StickyBookCTA } from "@/components/layout/StickyBookCTA";
+import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { MeetTiffini } from "@/components/sections/MeetTiffini";
+import { HearTiffini } from "@/components/sections/HearTiffini";
+import { Showcases } from "@/components/sections/Showcases";
+import { TypesOfLessons } from "@/components/sections/TypesOfLessons";
 import { WhatYouLearn } from "@/components/sections/WhatYouLearn";
 import { WhoIsItFor } from "@/components/sections/WhoIsItFor";
-import { VocalMethod } from "@/components/sections/VocalMethod";
 import { VocalAdvantage } from "@/components/sections/VocalAdvantage";
-import { Services } from "@/components/sections/Services";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Press } from "@/components/sections/Press";
+import { Studio } from "@/components/sections/Studio";
+import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
-import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -16,16 +19,19 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <MeetTiffini />
+        <HearTiffini />
+        <Showcases />
+        <TypesOfLessons />
         <WhatYouLearn />
         <WhoIsItFor />
-        <VocalMethod />
         <VocalAdvantage />
-        <Services />
-        <Testimonials />
-        <Press />
+        <Studio />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
+      <StickyBookCTA />
     </div>
   );
 }

@@ -14,7 +14,8 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <p className="text-gray-400">
-              Email: voiceacademy1@gmail.com<br />
+              Email: tiff@mjvoice.com
+              <br />
               Mount Juliet, TN
             </p>
           </div>
@@ -34,7 +35,10 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Greatest Star Studio. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Greatest Star Studio. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
