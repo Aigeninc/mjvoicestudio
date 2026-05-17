@@ -93,7 +93,7 @@ export function Hero() {
               className="border-white text-white bg-transparent hover:bg-white hover:text-black font-medium text-base px-8 py-6 w-full sm:w-auto"
               asChild
             >
-              <a href="#listen">Hear Tiffini Sing</a>
+              <a href="#lessons">Explore Lessons</a>
             </Button>
           </motion.div>
         </motion.div>
